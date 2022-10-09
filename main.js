@@ -26,7 +26,8 @@ function switchpanel0() {
   document.getElementById("main-intro").style.display = "none";
   document.getElementById("main-expenses").style.display = "none";
   document.getElementById("main-savings").style.display = "none";
-  document.getElementById("main-invest").style.display = "none"; //document.getElementById("btnNavHome").style.backgroundColor = "#266751";
+  document.getElementById("main-invest").style.display = "none"; 
+  document.getElementById("main-propery").style.display = "none"; //document.getElementById("btnNavHome").style.backgroundColor = "#266751";
   //document.getElementById("btnNavExp").style.backgroundColor = "#41AF71";
 }
 
@@ -37,6 +38,7 @@ function switchpanel1() {
   noDisplay("main-home");
   noDisplay("main-savings");
   noDisplay("main-invest");
+  noDisplay("main-property");
   //document.getElementById("btnNavExp").style.backgroundColor = "#266751";
   //document.getElementById("btnNavHome").style.backgroundColor = "#41AF71";
 }
@@ -47,7 +49,8 @@ function switchpanel2() {
   noDisplay("main-intro");
   noDisplay("main-home");
   noDisplay("main-expenses");
-  noDisplay("main-invest");
+  noDisplay("main-invest"); 
+  noDisplay("main-property");
   //document.getElementById("btnNavExp").style.backgroundColor = "#266751";
   //document.getElementById("btnNavHome").style.backgroundColor = "#41AF71";
 }
@@ -59,6 +62,18 @@ function switchpanel3() {
   noDisplay("main-home");
   noDisplay("main-expenses");
   noDisplay("main-savings");
+  noDisplay("main-property");
+  //document.getElementById("btnNavExp").style.backgroundColor = "#266751";
+  //document.getElementById("btnNavHome").style.backgroundColor = "#41AF71";
+}
+function switchpanel4() {
+  yesDisplay("main-property");
+  yesDisplay("sidecontent");
+  noDisplay("main-intro");
+  noDisplay("main-home");
+  noDisplay("main-expenses");
+  noDisplay("main-savings");
+  noDisplay("main-invest");
   //document.getElementById("btnNavExp").style.backgroundColor = "#266751";
   //document.getElementById("btnNavHome").style.backgroundColor = "#41AF71";
 }

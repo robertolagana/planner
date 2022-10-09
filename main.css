@@ -236,7 +236,11 @@ footer {
   }
 }
 @media screen and (max-width:895px) and (min-width:635px) {
-  main {
+  li {
+    display: inline-grid;
+    padding: 10px 10px;
+  }
+	main {
     height: auto;
     padding: 5px 0px;
   }
