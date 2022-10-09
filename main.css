@@ -1,0 +1,310 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Orbitron:wght@400;700;900&family=Righteous&display=swap');
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+body {
+  background-color: #41AF71;
+  font-family: 'Lato', sans-serif;
+  border: solid black;
+  border-radius: 10px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+header {
+  background-color: #C5FFF8;
+  width: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+h1 {
+  margin: 0px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 50px;
+  text-align: center;
+  padding: 10px 0px;
+}
+header a {
+  text-decoration: none;
+}
+header a:link, a:visited {
+  color: black;
+}
+header a:hover {
+  cursor: pointer;
+}
+nav {
+  background-color: #C5FFF8;
+  height: auto;
+  padding: 0px;
+  width: 100%;
+  margin: 0px;
+}
+ul {
+  height: auto;
+  text-align: center;
+  margin: 0;
+  padding: 20px 0px;
+}
+li {
+  display: inline;
+  padding: 0px 10px;
+}
+li button, .btn {
+  border: none;
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  background-color: #41AF71;
+  color: #FFFFFF;
+  width: 120px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 400;
+}
+li button:hover, .btn:hover {
+  background-color: #266751;
+}
+main {
+  background-color: #C5FFF8;
+  height: 470px;
+}
+#maincontent {
+  float: left;
+  width: 60%;
+  border: thin solid #000000;
+  border-radius: 5px;
+  background-color: #D0FFEB;
+  margin: 10px;
+  padding: 10px 10px;
+}
+/*
+#maincontent h3{
+	margin: 0;
+}
+*/
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #ffffff;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid #000000;
+  border-radius: 50%;
+}
+input[type="radio"]:hover {
+  border: 0.18em solid #000000;
+  background-color: #266751;
+}
+input[type="radio"]:active {
+  background-color: #41AF71;
+}
+input[type="radio"]:checked {
+  background-color: #41AF71;
+}
+input[type="number"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0.15em solid #000000;
+  border-radius: 5px;
+  background-color: #ffffff;
+  height: 25px;
+  width: 100px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  margin-left: 10px;
+  padding-left: 10px;
+}
+.main-container {
+  margin: 5px 20px;
+}
+.no-initial-disp {
+  display: none;
+}
+#otherincome {
+  display: none;
+}
+#savings-table {
+  display: none;
+  border: thick solid #000000;
+  margin: 30px 0px 20px 0px;
+  border-collapse: collapse;
+}
+#savings-table th {
+  color: #ffffff;
+  height: 35px;
+  background-color: #266751;
+  border-bottom: medium solid #000000;
+}
+#savings-table td {
+  text-align: center;
+  width: 200px;
+  height: 30px;
+  background-color: #C5FFF8;
+  border-bottom: thin solid #000000;
+  padding: 3px 0px;
+}
+#savings-table th:nth-child(1), #savings-table td:nth-child(1), #savings-table th:nth-child(2), #savings-table td:nth-child(2) {
+  border-right: medium solid #000000;
+}
+#savings-table td:nth-child(3):hover, #savings-table td:nth-child(4):hover {
+  font-size: 20px;
+  font-weight: bold;
+}
+#amounts-invfunds {
+  display: none;
+}
+.invfunds {
+  display: inline;
+  font-size: 17px;
+  line-height: 40px;
+}
+.invfunds:hover {
+  font-weight: bold;
+}
+#sidecontent {
+  float: right;
+  width: 25%;
+  border: thin solid #000000;
+  background-color: #D0FFEB;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px 30px;
+}
+#sidecontent input[type="number"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0.20em solid #000000;
+  border-radius: 5px;
+  background-color: #ffffff;
+  height: 25px;
+  width: 100px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  margin-left: 10px;
+  padding-left: 10px;
+}
+#sidecontent select {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0.15em solid #000000;
+  border-radius: 5px;
+  background-color: #ffffff;
+  height: 25px;
+  width: 50px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  margin-left: 10px;
+  text-align: center;
+}
+#sidecontent .btn {
+  height: 40px;
+  margin: 20px 0px;
+}
+#sidecontent #result {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0.15em solid #000000;
+  border-radius: 5px;
+  background-color: #ffffff;
+  height: 25px;
+  width: 200px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  padding: 4px 50px;
+  margin-left: 10px;
+}
+footer {
+  background-color: #C5FFF8;
+  height: 60px;
+  margin: 0px;
+  padding: 20px 0px 0px 0px;
+  border-top: medium solid #000000;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.footer-content {
+  margin-top: 30px;
+  padding: 0px 20px;
+  text-align: right;
+}
+@media screen and (max-width:1270px) and (min-width:895px) {
+#sidecontent input[type="number"] {
+    margin: 10px;
+  }
+}
+@media screen and (max-width:895px) and (min-width:635px) {
+  main {
+    height: auto;
+    padding: 5px 0px;
+  }
+  #maincontent {
+    float: none;
+    width: auto;
+    margin: 0px 10px;
+  }
+  #sidecontent {
+    float: none;
+    width: auto;
+    margin: 10px 10px;
+  }
+}
+@media screen and (max-width:634px) and (min-width:300px) {
+  nav {
+    background-color: #C5FFF8;
+    height: auto;
+    padding: 0px;
+    width: 100%;
+    margin: 0px;
+  }
+  ul {
+    height: auto;
+    text-align: center;
+    margin: 0;
+    padding: 20px 0px;
+  }
+  li {
+    display: inline-grid;
+    padding: 10px 10px;
+  }
+  main {
+    height: auto;
+    padding: 5px 0px;
+  }
+  #maincontent {
+    float: none;
+    width: auto;
+    margin: 0px 10px;
+  }
+  #sidecontent {
+    float: none;
+    width: auto;
+    margin: 10px 10px;
+  }
+	input[type="number"] {
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width:448px) {
+  #savings-table {
+    font-size: 13px;
+  }
+  .btn {
+    width: 90px;
+    height: 35px;
+    font-size: 14px;
+  }
+  input[type="number"] {
+    border: 0.15em solid #000000;
+    height: 20px;
+    width: 80px;
+    font-weight: 700;
+    font-size: 12px;
+    margin: 20px;
+  }
+}
+
+
