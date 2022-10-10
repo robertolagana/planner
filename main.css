@@ -69,8 +69,6 @@ li button:hover, .btn:hover {
 main {
   background-color: #C5FFF8;
   height: auto;
-  display: flex;
-	
 }
 #maincontent {
   float: left;
@@ -80,7 +78,6 @@ main {
   background-color: #D0FFEB;
   margin: 10px;
   padding: 10px 10px;
-	
 }
 /*
 #maincontent h3{
@@ -161,7 +158,7 @@ input[type="number"] {
   font-weight: bold;
 }
 #propsurvey select, #propsurvey input[type="month"] {
-	-webkit-appearance: none;
+  -webkit-appearance: none;
   appearance: none;
   border: 0.15em solid #000000;
   border-radius: 5px;
@@ -175,7 +172,6 @@ input[type="number"] {
 }
 #sidecontent {
   float: right;
-  height: 280px;
   width: 35%;
   border: thin solid #000000;
   background-color: #D0FFEB;
@@ -196,7 +192,7 @@ input[type="number"] {
   margin-left: 10px;
   padding-left: 10px;
 }
-#sidecontent select  {
+#sidecontent select {
   -webkit-appearance: none;
   appearance: none;
   border: 0.15em solid #000000;
@@ -242,17 +238,23 @@ footer {
   text-align: right;
 }
 @media screen and (max-width:1270px) and (min-width:895px) {
-#sidecontent input[type="number"] {
+  #sidecontent input[type="number"] {
     margin: 10px;
   }
 }
-@media screen and (max-width:895px) and (min-width:635px) {	
+main {
+  display: flex;
+}
+#sidecontent {
+  height: 320px;
+}
+@media screen and (max-width:895px) and (min-width:635px) {
   li {
     display: inline-grid;
     padding: 10px 10px;
   }
-	main {
-    height: auto;
+  main {
+    display: block;
     padding: 5px 0px;
   }
   #maincontent {
@@ -265,7 +267,7 @@ footer {
     width: auto;
     margin: 10px 10px;
   }
-	input[type="number"] {
+  input[type="number"] {
     margin: 10px;
   }
 }
@@ -288,7 +290,7 @@ footer {
     padding: 10px 10px;
   }
   main {
-    height: auto;
+    display: block;
     padding: 5px 0px;
   }
   #maincontent {
@@ -301,14 +303,13 @@ footer {
     width: auto;
     margin: 10px 10px;
   }
-	input[type="number"] {
+  input[type="number"] {
     margin: 10px;
   }
-	input[type="month"] {
+  input[type="month"] {
     margin: 10px;
   }
 }
-
 @media screen and (max-width:448px) {
   #savings-table {
     font-size: 13px;
@@ -327,5 +328,3 @@ footer {
     margin: 20px;
   }
 }
-
-
