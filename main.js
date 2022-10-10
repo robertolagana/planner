@@ -27,7 +27,7 @@ function switchpanel0() {
   document.getElementById("main-expenses").style.display = "none";
   document.getElementById("main-savings").style.display = "none";
   document.getElementById("main-invest").style.display = "none"; 
-  document.getElementById("main-propery").style.display = "none"; //document.getElementById("btnNavHome").style.backgroundColor = "#266751";
+  document.getElementById("main-property").style.display = "none"; //document.getElementById("btnNavHome").style.backgroundColor = "#266751";
   //document.getElementById("btnNavExp").style.backgroundColor = "#41AF71";
 }
 
@@ -89,6 +89,31 @@ function radiobuttonselection1() {
     yesDisplay("otherincome");
   }
 }
+
+function radiobuttonselection2() {
+  if (document.getElementById("propinterest-no").checked) {
+    noDisplay("propsurvey");
+  }
+}
+
+function radiobuttonselection3() {
+  if (document.getElementById("propinterest-yes").checked) {
+    yesDisplay("propsurvey");
+  }
+}
+
+function radiobuttonselection4() {
+  if (document.getElementById("propowned-no").checked) {
+    noDisplay("showownedpropcostinput");
+  }
+}
+
+function radiobuttonselection5() {
+  if (document.getElementById("propowned-yes").checked) {
+    yesDisplay("showownedpropcostinput");
+  }
+}
+
 
 let a = 0;
 let b = 0;
@@ -231,6 +256,12 @@ function showmeinvest() {
   document.getElementById("total-invfunds").innerHTML = tinv * g;
 
   yesDisplay("amounts-invfunds");
+}
+
+
+function showmeprop() {
+				
+  yesDisplay("amounts-propfunds");
 }
 
 // below is the sidecontent calculator javascript

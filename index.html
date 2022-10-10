@@ -27,7 +27,7 @@
     <li>
       <button id="btnNavInv" onClick="switchpanel3()">Investments</button>
     </li>
-	  <li>
+    <li>
       <button id="btnNavPro" onClick="switchpanel4()">Property</button>
     </li>
   </ul>
@@ -53,7 +53,7 @@
           <label for="other-no">No</label>
           <input type="radio" id="other-no" name="radioinputq1" value="no" onclick="radiobuttonselection0()">
         </div>
-        <div id="otherincome">
+        <div id="otherincome" class="no-initial-disp">
           <p>
             <label for="otherincomeinput">Enter your other income here: </label>
             <input type="number" id="otherincomeinput">
@@ -73,7 +73,7 @@
     </div>
     <div id="main-expenses" class="main-container no-initial-disp">
       <h3>Now it's time to tell us how much you spend every month.</h3>
-      <h5> Please fill in the below monthly expenses. </h5>
+      <h5> Please fill in the below monthly expenses. All values taken to be in Euros.</h5>
       <form onSubmit="return false">
         <p>
           <label for="monthly-groceries">Enter <strong>Groceries</strong> monthly expense value here: </label>
@@ -147,7 +147,7 @@
       <p>
         <input type="button" id="showinvestbutton" class="btn" value="Show Me!" onClick="showmeinvest()">
       </p>
-      <div id="amounts-invfunds">
+      <div id="amounts-invfunds" class="no-initial-disp">
         <div class="invfunds">Monthly Investment Funds: <span id="monthly-invfunds">0</span> Euros</div>
         <br>
         <div class="invfunds">Yearly Investment Funds: <span id="yearly-invfunds">0</span> Euros</div>
@@ -155,37 +155,102 @@
         <div class="invfunds">Total Investment Funds: <span id="total-invfunds">0</span> Euros</div>
       </div>
     </div>
-	  <div id="main-property" class="main-container no-initial-disp">
-	  <h3>What about Property? Are you interested in investing in any property?</h3>
-	  </div>
+    <div id="main-property" class="main-container no-initial-disp">
+      <h3>What do you think about investing in property?</h3>
+	  <h5>All values taken to be in Euros.</h5>
+      <p>Are you interested in investing in any property?</p>
+      <form onSubmit="return false">
+        <label for="propinterest-yes">Yes</label>
+        <input type="radio" id="propinterest-yes" name="radioinputq3" value="yes" onclick="radiobuttonselection3()" >
+        <label for="propinterest-no">No</label>
+        <input type="radio" id="propinterest-no" name="radioinputq3" value="no" onclick="radiobuttonselection2()">
+      </form>
+      <div id="propsurvey" class="no-initial-disp">
+        <form onSubmit="return false">
+          <p> Do you own any properties? </p>
+          <label for="propowned-yes">Yes</label>
+          <input type="radio" id="propowned-yes" name="radioinputq4" value="yes" onclick="radiobuttonselection5()">
+          <label for="propowned-no">No</label>
+          <input type="radio" id="propowned-no" name="radioinputq4" value="no" onclick="radiobuttonselection4()">
+          <p id="showownedpropcostinput" class="no-initial-disp">
+            <label for="ownedpropcost">Please enter the value of your properties:</label>
+            <input type="number" id="ownedpropcost">
+          </p>
+          <p>What property would you like to purchase?</p>
+          <table>
+            <tr>
+              <td><label for="proptype">Property Type: </label></td>
+              <td><select id="proptype">
+                  <option value="Apartment">Apartment</option>
+                  <option value="House of Character">House of Character</option>
+                  <option value="Country House">Country House</option>
+                  <option value="Town House">Town House</option>
+                  <option value="Penthouse">Penthouse</option>
+                </select></td>
+            </tr>
+            <tr>
+              <td><label for="proploc">Property Location: </label></td>
+              <td><select id="proploc">
+                  <option value="Malta">Malta</option>
+                  <option value="Gozo">Gozo</option>
+                  <option value="Spain">Spain</option>
+                  <option value="Portugal">Portugal</option>
+                  <option value="Italy">Italy</option>
+                  <option value="Sicily">Sicily</option>
+                </select></td>
+            </tr>
+          </table>
+			 <p>
+            <label for="targetpropcost">How much would this desired property cost?</label>
+            <input type="number" id="targetpropcost">
+          </p>
+			<p>
+            <label for="capitalpercentage">What is the % value of the desired property required for the initial deposit of the property?</label>
+            <input type="number" id="capitalpercentage">
+          </p>
+			<p>
+			<label for="targetpropdate">When do you plan to purchase your desired property?</label>
+				<input type="month" id="targetpropdate">
+			</p>
+        </form>
+        <p>
+          <input type="button" id="showpropfundsbutton" class="btn" value="How Much?" onClick="showmeprop()">
+        </p>
+        <div id="amounts-propfunds" class="no-initial-disp">
+          <p>You need <strong><span id="capitalneeded">0</span> Euros</strong> of capital funds and you need to save <strong><span id="monthly-propsavings">0</span> Euros</strong> per month for you to be able to purchase the property.</p>
+        </div>
+      </div>
+    </div>
   </div>
   <div id="sidecontent" class="no-initial-disp">
     <h2>Calculator</h2>
-	  <form onSubmit="return false">
-      <p>
-        <label for="num1">Enter the first number: </label>
-        <input id="num1" type="number">
-      </p>
-      <p>
-        <label for="num2">Enter the second number: </label>
-        <input id="num2" type="number">
-      </p>
-      <p>
-        <label for="operation">Choose Operation: </label>
-        <select id="operation">
-          <option value="+">+</option>
-          <option value="-">-</option>
-          <option value="*">*</option>
-          <option value="/">/</option>
-        </select>
-      </p>
-      <p>
-        <input type="button" class="btn" value="Calculate" onClick="calculator()">
-      </p>
-      <p>
-        <label for="result">Result: </label>
-        <label id="result" type="number">0</label>
-      </p>
+    <form onSubmit="return false">
+      <table>
+        <tr>
+          <td><label for="num1">Enter the first number: </label></td>
+          <td><input id="num1" type="number"></td>
+        </tr>
+        <tr>
+          <td><label for="num2">Enter the second number: </label></td>
+          <td><input id="num2" type="number"></td>
+        </tr>
+        <tr>
+          <td><label for="operation">Choose Operation: </label></td>
+          <td><select id="operation">
+              <option value="+">+</option>
+              <option value="-">-</option>
+              <option value="*">*</option>
+              <option value="/">/</option>
+            </select></td>
+        </tr>
+        <tr>
+          <td><input type="button" class="btn" value="Calculate" onClick="calculator()"></td>
+        </tr>
+        <tr>
+          <td><label for="result">Result: </label></td>
+          <td><label id="result" type="number">0</label></td>
+        </tr>
+      </table>
     </form>
   </div>
 </main>

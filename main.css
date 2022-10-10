@@ -68,7 +68,9 @@ li button:hover, .btn:hover {
 }
 main {
   background-color: #C5FFF8;
-  height: 470px;
+  height: auto;
+  display: flex;
+	
 }
 #maincontent {
   float: left;
@@ -78,6 +80,7 @@ main {
   background-color: #D0FFEB;
   margin: 10px;
   padding: 10px 10px;
+	
 }
 /*
 #maincontent h3{
@@ -122,9 +125,6 @@ input[type="number"] {
 .no-initial-disp {
   display: none;
 }
-#otherincome {
-  display: none;
-}
 #savings-table {
   display: none;
   border: thick solid #000000;
@@ -152,9 +152,6 @@ input[type="number"] {
   font-size: 20px;
   font-weight: bold;
 }
-#amounts-invfunds {
-  display: none;
-}
 .invfunds {
   display: inline;
   font-size: 17px;
@@ -163,14 +160,28 @@ input[type="number"] {
 .invfunds:hover {
   font-weight: bold;
 }
+#propsurvey select, #propsurvey input[type="month"] {
+	-webkit-appearance: none;
+  appearance: none;
+  border: 0.15em solid #000000;
+  border-radius: 5px;
+  background-color: #ffffff;
+  height: 35px;
+  width: 150px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  margin-left: 10px;
+  padding-left: 10px;
+}
 #sidecontent {
   float: right;
-  width: 25%;
+  height: 280px;
+  width: 35%;
   border: thin solid #000000;
   background-color: #D0FFEB;
   border-radius: 5px;
   margin: 10px;
-  padding: 10px 30px;
+  padding: 10px 30px 30px 30px;
 }
 #sidecontent input[type="number"] {
   -webkit-appearance: none;
@@ -185,7 +196,7 @@ input[type="number"] {
   margin-left: 10px;
   padding-left: 10px;
 }
-#sidecontent select {
+#sidecontent select  {
   -webkit-appearance: none;
   appearance: none;
   border: 0.15em solid #000000;
@@ -235,7 +246,7 @@ footer {
     margin: 10px;
   }
 }
-@media screen and (max-width:895px) and (min-width:635px) {
+@media screen and (max-width:895px) and (min-width:635px) {	
   li {
     display: inline-grid;
     padding: 10px 10px;
@@ -253,6 +264,9 @@ footer {
     float: none;
     width: auto;
     margin: 10px 10px;
+  }
+	input[type="number"] {
+    margin: 10px;
   }
 }
 @media screen and (max-width:634px) and (min-width:300px) {
@@ -288,6 +302,9 @@ footer {
     margin: 10px 10px;
   }
 	input[type="number"] {
+    margin: 10px;
+  }
+	input[type="month"] {
     margin: 10px;
   }
 }
