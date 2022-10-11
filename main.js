@@ -26,7 +26,7 @@ function switchpanel0() {
   document.getElementById("main-intro").style.display = "none";
   document.getElementById("main-expenses").style.display = "none";
   document.getElementById("main-savings").style.display = "none";
-  document.getElementById("main-invest").style.display = "none"; 
+  document.getElementById("main-invest").style.display = "none";
   document.getElementById("main-property").style.display = "none"; //document.getElementById("btnNavHome").style.backgroundColor = "#266751";
   //document.getElementById("btnNavExp").style.backgroundColor = "#41AF71";
 }
@@ -49,7 +49,7 @@ function switchpanel2() {
   noDisplay("main-intro");
   noDisplay("main-home");
   noDisplay("main-expenses");
-  noDisplay("main-invest"); 
+  noDisplay("main-invest");
   noDisplay("main-property");
   //document.getElementById("btnNavExp").style.backgroundColor = "#266751";
   //document.getElementById("btnNavHome").style.backgroundColor = "#41AF71";
@@ -66,6 +66,7 @@ function switchpanel3() {
   //document.getElementById("btnNavExp").style.backgroundColor = "#266751";
   //document.getElementById("btnNavHome").style.backgroundColor = "#41AF71";
 }
+
 function switchpanel4() {
   yesDisplay("main-property");
   yesDisplay("sidecontent");
@@ -128,7 +129,12 @@ let rem = 0;
 let rem2 = 0;
 let g = 0;
 let tinv = 0;
-
+let h = 0;
+let i = 0;
+let propmon = 0;
+let propyear = 0;
+let propsave = 0;
+let propsavemon = 0;
 
 function myIncome() {
   a = parseInt(document.getElementById("netincomeinput").value);
@@ -260,7 +266,51 @@ function showmeinvest() {
 
 
 function showmeprop() {
-				
+
+  h = getIdValueInteger("targetpropcost");
+  i = getIdValueInteger("capitalpercentage") / 100;
+	
+/* trying to figure out how to bobtain number from input month and year and use those numbers */
+	/* managed to use propyear well in code below - line 299 */
+	
+	
+  propmon = document.getElementById("targetpropdate").value;
+  propmon = parseInt(propmon.substring(5, 7));
+
+  propyear = document.getElementById("targetpropdate").value;
+  propyear = parseInt(propyear.substring(0, 4));
+
+	/* the rest is good */
+	
+  if (Number.isNaN(h)) {
+    h = 0;
+  }
+  if (Number.isNaN(i)) {
+    i = 0;
+  }
+  if (Number.isNaN(propmon)) {
+    propmon = 0;
+  }
+  if (Number.isNaN(propyear)) {
+    propyear = 0;
+  }
+
+  propsave = h * i;
+  propsavemon = propsave / ((propyear - 2022) * 12);
+
+  document.getElementById("capitalneeded").innerHTML = propsave;
+  document.getElementById("monthly-propsavings").innerHTML = propsavemon;
+
+  /* testing by displaying in console - to remove once ready */
+
+  console.log(h);
+  console.log(i);
+  console.log(propmon);
+  console.log(propyear);
+  console.log(propsave);
+  console.log(propsavemon);
+
+
   yesDisplay("amounts-propfunds");
 }
 
