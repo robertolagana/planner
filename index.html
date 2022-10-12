@@ -38,7 +38,7 @@
       <h3>Welcome to your favourite financial planner.</h3>
       <p>This planner will help show you how to manage your savings and investments without having to worry whether it's possible or not.</p>
       <p>This financial planner will do all the hard work for you.</p>
-      <p>So go ahead, click on <strong><span style="color: #355C7D">Home</span></strong> and start your journey!</p>
+      <p>So go ahead, click on <strong><span style="color: #03045E"><a style="cursor: pointer" onClick="switchpanel0()">Home</a></span></strong> and start your journey!</p>
     </div>
     <div id="main-home" class="main-container no-initial-disp">
       <h3>Let's start by answering some initial questions!</h3>
@@ -164,9 +164,7 @@
         <input type="radio" id="propinterest-yes" name="radioinputq3" value="yes" onclick="radiobuttonselection3()" >
         <label for="propinterest-no">No</label>
         <input type="radio" id="propinterest-no" name="radioinputq3" value="no" onclick="radiobuttonselection2()">
-      </form>
-      <div id="propsurvey" class="no-initial-disp">
-        <form onSubmit="return false">
+        <div id="propsurvey" class="no-initial-disp">
           <p> Do you own any properties? </p>
           <label for="propowned-yes">Yes</label>
           <input type="radio" id="propowned-yes" name="radioinputq4" value="yes" onclick="radiobuttonselection5()">
@@ -212,14 +210,14 @@
             <label for="targetpropdate">When do you plan to purchase your desired property?</label>
             <input type="month" id="targetpropdate">
           </p>
-        </form>
-        <p>
-          <input type="button" id="showpropfundsbutton" class="btn" value="Show Me!" onClick="showmeprop()">
-        </p>
-        <div id="amounts-propfunds" class="no-initial-disp">
-          <p>You need <strong><span id="capitalneeded">0</span> Euros</strong> of capital funds and you need to save <strong><span id="monthly-propsavings">0</span> Euros</strong> per month for you to be able to purchase the property.</p>
+          <p>
+            <input type="button" id="showpropfundsbutton" class="btn" value="Show Me!" onClick="showmeprop()">
+          </p>
+          <div id="amounts-propfunds" class="no-initial-disp">
+            <p>You need <strong><span id="capitalneeded">0</span> Euros</strong> of capital funds and you need to save <strong><span id="monthly-propsavings">0</span> Euros</strong> per month for you to be able to purchase the property.</p>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
   <div id="sidecontent" class="no-initial-disp">

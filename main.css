@@ -5,7 +5,7 @@ html, body {
   overflow-x: hidden;
 }
 body {
-  background-color: #355C7D;
+  background-color: #CAF0F8;
   font-family: 'Lato', sans-serif;
   border: solid black;
   border-radius: 10px;
@@ -13,15 +13,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 header {
-  background-color: #6C5B7B;
+  background-color: #03045E;
   width: auto;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
 }
 h1 {
   margin: 0px;
   font-family: 'Lato', sans-serif;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 50px;
   text-align: center;
   padding: 10px 0px;
@@ -31,13 +31,13 @@ header a {
   text-decoration: none;
 }
 header a:link, a:visited {
-  color: black;
+  color: white;
 }
 header a:hover {
   cursor: pointer;
 }
 nav {
-  background-color: #6C5B7B;
+  background-color: #03045E;
   height: auto;
   padding: 0px;
   width: 100%;
@@ -57,7 +57,7 @@ li button, .btn {
   border: none;
   border-radius: 5px;
   font-family: 'Lato', sans-serif;
-  background-color: #355C7D;
+  background-color: #03045E;
   color: #FFFFFF;
   width: 120px;
   height: 50px;
@@ -65,13 +65,13 @@ li button, .btn {
   font-weight: 400;
 }
 li button:hover, .btn:hover {
-  background-color: #F57280;
-	border: solid #355C7D;
-	color: #355C7D;
-	font-weight: 900;
+  background-color: #00B4D8;
+	border: solid #03045E;
+	color: #03045E;
+	font-weight: 700;
 }
 main {
-  background-color: #6C5B7B;
+  background-color: #03045E;
   height: auto;
 }
 #maincontent {
@@ -79,7 +79,7 @@ main {
   width: 60%;
   border: thin solid #000000;
   border-radius: 5px;
-  background-color: #C06C84;
+  background-color: #CAF0F8;
   margin: 10px;
   padding: 10px 10px;
 }
@@ -91,7 +91,7 @@ main {
 input[type="radio"] {
   -webkit-appearance: none;
   appearance: none;
-  background-color: #C5FFF8;
+  background-color: #CAF0F8;
   width: 1.15em;
   height: 1.15em;
   border: 0.15em solid #000000;
@@ -99,20 +99,20 @@ input[type="radio"] {
 }
 input[type="radio"]:hover {
   border: 0.18em solid #000000;
-  background-color: #6C5B7B;
+  background-color: #03045E;
 }
 input[type="radio"]:active {
-  background-color: #355C7D;
+  background-color: #00B4D8;
 }
 input[type="radio"]:checked {
-  background-color: #355C7D;
+  background-color: #00B4D8;
 }
 input[type="number"] {
   -webkit-appearance: none;
   appearance: none;
   border: 0.15em solid #000000;
   border-radius: 5px;
-  background-color: #C5FFF8;
+  background-color: #90E0EF;
   height: 25px;
   width: 100px;
   font-family: 'Lato', sans-serif;
@@ -135,14 +135,14 @@ input[type="number"] {
 #savings-table th {
   color: #ffffff;
   height: 35px;
-  background-color: #355C7D;
+  background-color: #03045E;
   border-bottom: medium solid #000000;
 }
 #savings-table td {
   text-align: center;
   width: 200px;
   height: 30px;
-  background-color: #C5FFF8;
+  background-color: #90E0EF;
   border-bottom: thin solid #000000;
   padding: 3px 0px;
 }
@@ -166,7 +166,7 @@ input[type="number"] {
   appearance: none;
   border: 0.15em solid #000000;
   border-radius: 5px;
-  background-color: #C5FFF8;
+  background-color: #90E0EF;
   height: 35px;
   width: 150px;
   font-family: 'Lato', sans-serif;
@@ -178,7 +178,7 @@ input[type="number"] {
   float: right;
   width: 35%;
   border: thin solid #000000;
-  background-color: #C06C84;
+  background-color: #CAF0F8;
   border-radius: 5px;
   margin: 10px;
   padding: 10px 30px 30px 30px;
@@ -188,7 +188,7 @@ input[type="number"] {
   appearance: none;
   border: 0.20em solid #000000;
   border-radius: 5px;
-  background-color: #C5FFF8;
+  background-color: #90E0EF;
   height: 25px;
   width: 100px;
   font-family: 'Lato', sans-serif;
@@ -201,7 +201,7 @@ input[type="number"] {
   appearance: none;
   border: 0.15em solid #000000;
   border-radius: 5px;
-  background-color: #C5FFF8;
+  background-color: #90E0EF;
   height: 25px;
   width: 50px;
   font-family: 'Lato', sans-serif;
@@ -219,7 +219,7 @@ input[type="number"] {
   appearance: none;
   border: 0.15em solid #000000;
   border-radius: 5px;
-  background-color: #C5FFF8;
+  background-color: #90E0EF;
   height: 25px;
   width: 200px;
   font-family: 'Lato', sans-serif;
@@ -228,19 +228,21 @@ input[type="number"] {
   margin-left: 10px;
 }
 footer {
-  background-color: #6C5B7B;
+  background-color: #03045E;
+  color: #ffffff;
   height: 60px;
   margin: 0px;
   padding: 20px 0px 0px 0px;
   border-top: medium solid #000000;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
 }
 .footer-content {
   margin-top: 30px;
   padding: 0px 20px;
   text-align: right;
 }
+
 @media screen and (max-width:1270px) and (min-width:895px) {
   #sidecontent input[type="number"] {
     margin: 10px;
