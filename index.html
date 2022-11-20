@@ -2,258 +2,198 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Financial Plan</title>
+<title>Financial Planner V2 </title>
+<link rel="icon" href="images/favicon.png">
+<!--Google Fonts-->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;900&family=Ubuntu&display=swap" rel="stylesheet">
+<!--Bootstrap CSS-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <link href="main.css" rel="stylesheet" type="text/css">
-<script src="main.js"></script>
+<!--Bootstrap Script--> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script> 
+<!-- Font Awesome --> 
+<script src="https://kit.fontawesome.com/b9f120a825.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-<header>
-  <h1 title="Click to Refresh"><a href="index.html">Financial Planner</a></h1>
-</header>
-<nav>
-  <ul>
-    <li>
-      <button id="btnNavHome" onClick="switchpanel0()">Home</button>
-    </li>
-    <li>
-      <button id="btnNavExp" onClick="switchpanel1()">Expenses</button>
-    </li>
-    <li>
-      <button id="btnNavSav" onClick="switchpanel2()">Savings</button>
-    </li>
-    <li>
-      <button id="btnNavInv" onClick="switchpanel3()">Investments</button>
-    </li>
-    <li>
-      <button id="btnNavPro" onClick="switchpanel4()">Property</button>
-    </li>
-  </ul>
-</nav>
-<main>
-  <div id="maincontent">
-    <div id="main-intro" class="main-container">
-      <h3>Welcome to your favourite financial planner.</h3>
-      <p>This planner will help show you how to manage your savings and investments without having to worry whether it's possible or not.</p>
-      <p>This financial planner will do all the hard work for you.</p>
-      <p>So go ahead, click on <strong><span style="color: #03045E"><a style="cursor: pointer" onClick="switchpanel0()">Home</a></span></strong> and start your journey!</p>
+<!--	Navigation Bar	-->
+
+<section class="dark-section" id="navigation">
+  <div class="title-navigation container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark my-4"> <a class="navbar-brand" href="index.html">FinanzPlanner</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"> <a class="nav-link" href="#income">Income</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#expenses">Expenses</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#planner">Planner</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#footer">Contact</a> </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<!--	Title Catchphrase	-->
+
+<section class="dark-section" id="title">
+  <div class="title-catchphrase container-fluid">
+    <div class="row">
+      <div class="col-lg-6">
+        <h1 class="title-heading">Learn how to save and grow your financial portfolio.</h1>
+      </div>
+      <div class="col-lg-6"> <img class="title-image" src="images/wallet-icon.png" alt="wallet-icon"> </div>
     </div>
-    <div id="main-home" class="main-container no-initial-disp">
-      <h3>Let's start by answering some initial questions!</h3>
-      <h5>Kindly enter monthly values. All values taken to be in Euros.</h5>
-      <form onSubmit="return false">
-        <label for="netincomeinput">Enter your full-time <strong>net</strong> income here: </label>
-        <input type="number" id="netincomeinput">
-        <div class="radio-button-question">
-          <p>Do you have any other income?</p>
-          <label for="other-yes">Yes</label>
-          <input type="radio" id="other-yes" name="radioinputq1" value="yes" onclick="radiobuttonselection1()" >
-          <label for="other-no">No</label>
-          <input type="radio" id="other-no" name="radioinputq1" value="no" onclick="radiobuttonselection0()">
-        </div>
-        <div id="otherincome" class="no-initial-disp">
-          <p>
-            <label for="otherincomeinput">Enter your other income here: </label>
-            <input type="number" id="otherincomeinput">
-          </p>
-          <div class="radio-button-question">
-            <p>Do you want to save this other income separately?</p>
-            <label for="save-yes">Yes</label>
-            <input type="radio" id="save-yes" name="radioinputq2" value="yes">
-            <label for="save-no">No</label>
-            <input type="radio" id="save-no" name="radioinputq2" value="no">
-          </div>
-        </div>
-        <p>
-          <input type="submit" id="submit-button1" class="btn" value="Proceed" onClick="myIncome()">
-        </p>
-      </form>
-    </div>
-    <div id="main-expenses" class="main-container no-initial-disp">
-      <h3>Now it's time to tell us how much you spend every month.</h3>
-      <h5> Please fill in the below monthly expenses. All values taken to be in Euros.</h5>
-      <form onSubmit="return false">
-        <p>
-          <label for="monthly-groceries">Enter <strong>Groceries</strong> monthly expense value here: </label>
-          <input type="number" id="monthly-groceries" class="expense-input">
-        </p>
-        <p>
-          <label for="monthly-bills">Enter <strong>Bills</strong> monthly expense value here: </label>
-          <input type="number" id="monthly-bills" class="expense-input">
-        </p>
-        <p>
-          <label for="monthly-others">Enter <strong>Other</strong> monthly expense value here: </label>
-          <input type="number" id="monthly-others" class="expense-input">
-        </p>
-        <p>
-          <label for="monthly-loan">Enter <strong>Loans</strong> monthly expense value here: </label>
-          <input type="number" id="monthly-loan" class="expense-input">
-        </p>
-        <p>
-          <input type="submit" id="submit-button2" class="btn" value="Proceed" onClick="myExpenses()">
-        </p>
-      </form>
-    </div>
-    <div id="main-savings" class="main-container no-initial-disp">
-      <h3>Time to check out your savings plan!</h3>
-      <form>
-        <label for="monthsofsaving">For how many <strong>months</strong> do you want your savings plan to be based? </label>
-        <input type="number" id="monthsofsaving" placeholder="default - 1">
-      </form>
-      <p>
-        <input type="button" id="workitbutton" class="btn" value="Work It Out!" onClick="showmesavings()" >
+  </div>
+</section>
+
+<!--	Introduction	-->
+
+<section class="light-section container-fluid" id="intro">
+  <h2 class="section-heading">Welcome to your Favourite Financial Planner</h2>
+  <div class="intro-text">
+    <p>FinanzPlanner will help you visualize your earnings and expenses, manage your savings, and delve into potential investment and property interests.</p>
+    <p>FinanzPlanner will do all the hard work for you.</p>
+    <p>So what are you waiting for? Start your journey now!</p>
+  </div>
+</section>
+
+<!--	Income	-->
+
+<section class="colored-section container-fluid" id="income">
+  <h2 class="section-heading">Your Financial Income</h2>
+  <div class="income-text"> <img src="images/income-image.png" alt="income image">
+    <form>
+      <p>Enter your yearly full-time net financial income here:
+        <input type="number" id="net-income-input" min="0" required><span class="validity"></span>
       </p>
-      <table id="savings-table">
-        <tr>
-          <th>Savings Type</th>
-          <th>Weighting</th>
-          <th id="overall-or-monthly" title="Amount in Euros">Overall Amount</th>
-          <th title="Amount in Euros">Yearly Amount</th>
-        </tr>
-        <tr>
-          <td>Pension Savings</td>
-          <td id="pen-weighting">%Weight</td>
-          <td id="pen-overall-sav">XAmount</td>
-          <td id="pen-yearly-sav">YAmount</td>
-        </tr>
-        <tr>
-          <td>Vacations and Events</td>
-          <td id="vac-weighting">%Weight</td>
-          <td id="vac-overall-sav">XAmount</td>
-          <td id="vac-yearly-sav">YAmount</td>
-        </tr>
-        <tr>
-          <td>Home Upgrades</td>
-          <td id="home-weighting">%Weight</td>
-          <td id="home-overall-sav">XAmount</td>
-          <td id="home-yearly-sav">YAmount</td>
-        </tr>
-        <tr>
-          <td>Rainy Day</td>
-          <td id="rain-weighting">%Weight</td>
-          <td id="rain-overall-sav">XAmount</td>
-          <td id="rain-yearly-sav">YAmount</td>
-        </tr>
-      </table>
+      <p class="radio-question">Do you have any other financial income?
+      <div class="radio-buttons-container">
+        <label for="other-yes">Yes</label>
+        <input type="radio" id="other-yes" name="radio-input-one" value="yes">
+        <label for="other-no">No</label>
+        <input type="radio" id="other-no" name="radio-input-one" value="no">
+      </div>
+      </p>
+      <div class="no-initial-display">
+        <p>Enter your yearly other net financial income here:
+          <input type="number" id="other-income-input" min="0" required><span class="validity"></span>
+        </p>
+        <p class="radio-question">Do you want to save your other financial income separately?
+        <div class="radio-buttons-container">
+          <label for="save-yes">Yes</label>
+          <input type="radio" id="save-yes" name="radio-input-two" value="yes">
+          <label for="save-no">No</label>
+          <input type="radio" id="save-no" name="radio-input-two" value="no">
+        </div>
+        </p>
+      </div>
+    </form>
+  </div>
+  <p> <a href="#expenses">
+    <input type="button" id="income-button" class="income-btn btn btn-lg btn-outline-light col-3" value="Proceed">
+    </a> </p>
+</section>
+
+<!--Expenses-->
+
+<section class="light-section container-fluid no-initial-display" id="expenses">
+  <h2 class="section-heading">What are your Expenses?</h2>
+  <div class="expenses-text"> <img src="images/expenses-image.png" alt="expenses image">
+    <form>
+      <p> Enter <strong>Groceries</strong> monthly expense value here:
+        <input type="number" id="monthly-groceries" class="expenses-input" required><span class="validity"></span>
+      </p>
+      <p> Enter <strong>Bills</strong> monthly expense value here:
+        <input type="number" id="monthly-bills" class="expenses-input" required><span class="validity"></span>
+      </p>
+      <p> Enter <strong>Loans</strong> monthly expense value here:
+        <input type="number" id="monthly-loans" class="expenses-input" required><span class="validity"></span>
+      </p>
+      <p> Enter <strong>Others</strong> monthly expense value here:
+        <input type="number" id="monthly-others" class="expenses-input" required><span class="validity"></span>
+      </p>
+    </form>
+  </div>
+  <p><a href="#planner">
+    <input type="button" id="expenses-button" class="expenses-btn btn btn-lg btn-outline-dark col-3" value="Proceed">
+    </a></p>
+</section>
+
+<!--Planner-->
+
+<section class="dark-section no-initial-display" id="planner" >
+  <div class="container-fluid">
+    <h2 class="section-heading">Check out your Savings Plan!</h2>
+    <div class="planner-text">
+      <form>
+        <p>One final step! <br>
+          On how many <strong>months</strong> do you want your savings plan to be based?
+          <input type="number" id="months-of-saving" placeholder="default - 1">
+        </p>
+      </form>
     </div>
-    <div id="main-invest" class="main-container no-initial-disp">
-      <h3>Finally, time to check out the available funds for your investments!</h3>
+    <table class="planner-table">
+      <tr>
+        <th>Savings Type</th>
+        <th>% Weighting</th>
+        <th>Yearly Amount</th>
+        <th>Overall Amount</th>
+      </tr>
+      <tr>
+        <td><input type="text" value="Pension Savings"></td>
+        <td class="percentage-weighting"><input type="number" min="0" max="100"></td>
+        <td class="y-amount">0 €</td>
+        <td class="o-amount">0 €</td>
+      </tr>
+      <tr>
+        <td><input type="text" value="Vacations & Events"></td>
+        <td class="percentage-weighting"><input type="number" min="0" max="100"></td>
+        <td class="y-amount">0 €</td>
+        <td class="o-amount">0 €</td>
+      </tr>
+      <tr>
+        <td><input type="text" value="Home Upgrades"></td>
+        <td class="percentage-weighting"><input type="number" min="0" max="100"></td>
+        <td class="y-amount">0 €</td>
+        <td class="o-amount">0 €</td>
+      </tr>
+      <tr>
+        <td><input type="text" value="Rainy Day"></td>
+        <td class="percentage-weighting"><input type="number" min="0" max="100"></td>
+        <td class="y-amount">0 €</td>
+        <td class="o-amount">0 €</td>
+      </tr>
+    </table>
+	  <p>
+      <input type="button" id="savings-button" class="savings-btn btn btn-lg btn-outline-light col-3" value="Work It Out!">
+    </p>
+  </div>
+  <div class="container-fluid light-section no-initial-display" id="inv">
+    <h2 class="section-heading">Finally, time to check out the available funds for your investments!</h2>
+    <div class="investments-text">
       <p>Now given that you already know how much money you are going to save, it is time to check out the remaining balance of funds available for you to invest. Now it is ultimately up to you what you want to do with these funds.</p>
       <p>Naturally, keep in mind that you can take the no risk - no reward approach and further save this money for any future needs.</p>
       <p>Otherwise, you can search for options where you can invest you funds, be it monthly, yearly or in bulk for maximizing your well-deserved earnings.</p>
       <p>So without further ado, check them out and I wish you the best of luck!</p>
       <p>
-        <input type="button" id="showinvestbutton" class="btn" value="Show Me!" onClick="showmeinvest()">
+        <input type="button" id="investments-button" class="investments-btn btn btn-lg btn-outline-dark col-3" value="Show Me!">
       </p>
-      <div id="amounts-invfunds" class="no-initial-disp">
-        <div class="invfunds">Monthly Investment Funds: <span id="monthly-invfunds">0</span> Euros</div>
-        <br>
-        <div class="invfunds">Yearly Investment Funds: <span id="yearly-invfunds">0</span> Euros</div>
-        <br>
-        <div class="invfunds">Total Investment Funds: <span id="total-invfunds">0</span> Euros</div>
+      <div class="investments-funds no-initial-display">
+        <p>Monthly Investment Funds: 0 Euros</p>
+        <p>Yearly Investment Funds: 0 Euros</p>
       </div>
     </div>
-    <div id="main-property" class="main-container no-initial-disp">
-      <h3>What do you think about investing in property?</h3>
-      <h5>All values taken to be in Euros.</h5>
-      <p>Are you interested in investing in any property?</p>
-      <form onSubmit="return false">
-        <label for="propinterest-yes">Yes</label>
-        <input type="radio" id="propinterest-yes" name="radioinputq3" value="yes" onclick="radiobuttonselection3()" >
-        <label for="propinterest-no">No</label>
-        <input type="radio" id="propinterest-no" name="radioinputq3" value="no" onclick="radiobuttonselection2()">
-        <div id="propsurvey" class="no-initial-disp">
-          <p> Do you own any properties? </p>
-          <label for="propowned-yes">Yes</label>
-          <input type="radio" id="propowned-yes" name="radioinputq4" value="yes" onclick="radiobuttonselection5()">
-          <label for="propowned-no">No</label>
-          <input type="radio" id="propowned-no" name="radioinputq4" value="no" onclick="radiobuttonselection4()">
-          <p id="showownedpropcostinput" class="no-initial-disp">
-            <label for="ownedpropcost">Please enter the value of your properties:</label>
-            <input type="number" id="ownedpropcost">
-          </p>
-          <p>What property would you like to purchase?</p>
-          <table>
-            <tr>
-              <td><label for="proptype">Property Type: </label></td>
-              <td><select id="proptype">
-                  <option value="Apartment">Apartment</option>
-                  <option value="House of Character">House of Character</option>
-                  <option value="Country House">Country House</option>
-                  <option value="Town House">Town House</option>
-                  <option value="Penthouse">Penthouse</option>
-                </select></td>
-            </tr>
-            <tr>
-              <td><label for="proploc">Property Location: </label></td>
-              <td><select id="proploc">
-                  <option value="Malta">Malta</option>
-                  <option value="Gozo">Gozo</option>
-                  <option value="Spain">Spain</option>
-                  <option value="Portugal">Portugal</option>
-                  <option value="Italy">Italy</option>
-                  <option value="Sicily">Sicily</option>
-                </select></td>
-            </tr>
-          </table>
-          <p>
-            <label for="targetpropcost">How much would this desired property cost?</label>
-            <input type="number" id="targetpropcost">
-          </p>
-          <p>
-            <label for="capitalpercentage">What is the % value of the desired property required for the initial deposit of the property?</label>
-            <input type="number" id="capitalpercentage">
-          </p>
-          <p>
-            <label for="targetpropdate">When do you plan to purchase your desired property?</label>
-            <input type="month" id="targetpropdate">
-          </p>
-          <p>
-            <input type="button" id="showpropfundsbutton" class="btn" value="Show Me!" onClick="showmeprop()">
-          </p>
-          <div id="amounts-propfunds" class="no-initial-disp">
-            <p>You need <strong><span id="capitalneeded">0</span> Euros</strong> of capital funds and you need to save <strong><span id="monthly-propsavings">0</span> Euros</strong> per month for you to be able to purchase the property.</p>
-          </div>
-        </div>
-      </form>
-    </div>
   </div>
-  <div id="sidecontent" class="no-initial-disp">
-    <h2>Calculator</h2>
-    <form onSubmit="return false">
-      <table>
-        <tr>
-          <td><label for="num1">Enter the first number: </label></td>
-          <td><input id="num1" type="number"></td>
-        </tr>
-        <tr>
-          <td><label for="num2">Enter the second number: </label></td>
-          <td><input id="num2" type="number"></td>
-        </tr>
-        <tr>
-          <td><label for="operation">Choose Operation: </label></td>
-          <td><select id="operation">
-              <option value="+">+</option>
-              <option value="-">-</option>
-              <option value="*">*</option>
-              <option value="/">/</option>
-            </select></td>
-        </tr>
-        <tr>
-          <td><input type="button" class="btn" value="Calculate" onClick="calculator()"></td>
-        </tr>
-        <tr>
-          <td><label for="result">Result: </label></td>
-          <td><label id="result" type="number">0</label></td>
-        </tr>
-      </table>
-    </form>
+</section>
+
+<!--Footer  -->
+
+<footer class="light-section" id="footer">
+  <div class="container-fluid"> <i class="footer-icon fa-brands fa-twitter"></i> <i class="footer-icon fa-brands fa-facebook"></i> <i class="footer-icon fa-brands fa-instagram"></i> <i class="footer-icon fa-solid fa-envelope"></i>
+    <p>© Copyright 2022 FinanzPlanner</p>
   </div>
-</main>
-<footer>
-  <div class="footer-content">Roberto Lagana &copy; 2022</div>
 </footer>
+<script src="index.js" charset="utf-8"></script>
 </body>
 </html>

@@ -1,105 +1,125 @@
-@charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Orbitron:wght@400;700;900&family=Righteous&display=swap');
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
+/* CSS Document */
+/* Elements */
 body {
-  background-color: #CAF0F8;
-  font-family: 'Lato', sans-serif;
-  border: solid black;
-  border-radius: 10px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-header {
-  background-color: #03045E;
-  width: auto;
-  border-top-left-radius: 7px;
-  border-top-right-radius: 7px;
-}
-h1 {
-  margin: 0px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 700;
-  font-size: 50px;
+  font-family: 'Montserrat';
   text-align: center;
-  padding: 10px 0px;
-  
 }
-header a {
-  text-decoration: none;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
 }
-header a:link, a:visited {
-  color: white;
+/*Containers*/
+.container-fluid {
+  padding: 5% 10%;
 }
-header a:hover {
-  cursor: pointer;
+#navigation .container-fluid {
+  padding: 1.5% 10%;
 }
-nav {
-  background-color: #03045E;
-  height: auto;
-  padding: 0px;
-  width: 100%;
-  margin: 0px;
+#title .container-fluid{
+	padding: 3% 10%;
 }
-ul {
-  height: auto;
-  text-align: center;
-  margin: 0;
-  padding: 20px 0px;
+#footer .container-fluid{
+	padding: 2.5% 10%;
 }
-li {
-  display: inline;
-  padding: 0px 10px;
+/*Sections - Colours & Headings */
+.dark-section {
+  background-color: #141414;
+  color: #ffffff;
 }
-li button, .btn {
-  border: none;
-  border-radius: 5px;
-  font-family: 'Lato', sans-serif;
-  background-color: #03045E;
-  color: #FFFFFF;
-  width: 120px;
-  height: 50px;
-  font-size: 18px;
-  font-weight: 400;
+.dark-section p {
+  color: #ffffff;
 }
-li button:hover, .btn:hover {
-  background-color: #00B4D8;
-	border: solid #03045E;
-	color: #03045E;
-	font-weight: 700;
+.light-section {
+  background-color: #D3F2F8;
+  color: #141414;
 }
-main {
-  background-color: #03045E;
-  height: auto;
+.light-section p {
+  color: #141414;
 }
-#maincontent {
-  float: left;
+.colored-section {
+  background-color: #010235;
+  color: #D3F2F8;
+}
+.colored-section p {
+  color: #ffffff;
+}
+.section-heading {
+  padding: 15px 0 50px;
+  font-size: 2.5rem;
+}
+/*Input Validity*/
+input:invalid + span::after {
+  position: absolute;
+  content: "✖";
+  padding-left: 5px;
+}
+input:valid + span::after {
+  position: absolute;
+  content: "✓";
+  padding-left: 5px;
+}
+/*Navigation Bar Section*/
+.navbar-brand {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.nav-item {
+  padding: 0 15px;
+}
+.nav-link {
+  font-size: 1.2rem;
+  font-family: 'Montserrat';
+  font-weight: 300;
+}
+/*Title Section*/
+.title-heading {
+  text-align: left;
+  padding-top: 20%;
+  font-size: 3.5rem;
+}
+/*Intro Section*/
+.intro-text {
   width: 60%;
-  border: thin solid #000000;
+  margin: auto;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+/*Income Section*/
+.income-text {
+  color: #ffffff;
+  text-align: left;
+  margin: auto;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+.income-text img {
+	width: 20%;
+	float: right;
+}
+.income-text input[type="number"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0.1em solid #ffffff;
   border-radius: 5px;
-  background-color: #CAF0F8;
-  margin: 10px;
-  padding: 10px 10px;
+  background-color: #010235;
+  color: #ffffff;
+  height: 30px;
+  width: 120px;
+  margin-left: 10px;
+  padding-left: 10px;
 }
-/*
-#maincontent h3{
-	margin: 0;
-}
-*/
 input[type="radio"] {
   -webkit-appearance: none;
   appearance: none;
-  background-color: #CAF0F8;
-  width: 1.15em;
-  height: 1.15em;
-  border: 0.15em solid #000000;
-  border-radius: 50%;
+  background-color: #D3F2F8;
+  width: 1rem;
+  height: 1rem;
+  border: 0.1rem solid #ffffff;
+  border-radius: 5px;
+  margin: 0 5px -2px;
 }
 input[type="radio"]:hover {
-  border: 0.18em solid #000000;
-  background-color: #03045E;
+  background-color: #010235;
 }
 input[type="radio"]:active {
   background-color: #00B4D8;
@@ -107,230 +127,124 @@ input[type="radio"]:active {
 input[type="radio"]:checked {
   background-color: #00B4D8;
 }
-input[type="number"] {
-  -webkit-appearance: none;
-  appearance: none;
-  border: 0.15em solid #000000;
-  border-radius: 5px;
-  background-color: #90E0EF;
-  height: 25px;
-  width: 100px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 700;
-  margin-left: 10px;
-  padding-left: 10px;
+.textbox-question {
+  margin-right: 20px;
 }
-.main-container {
-  margin: 5px 20px;
-}
-.no-initial-disp {
-  display: none;
-}
-#savings-table {
-  display: none;
-  border: thick solid #000000;
-  margin: 30px 0px 20px 0px;
-  border-collapse: collapse;
-}
-#savings-table th {
-  color: #ffffff;
-  height: 35px;
-  background-color: #03045E;
-  border-bottom: medium solid #000000;
-}
-#savings-table td {
-  text-align: center;
-  width: 200px;
-  height: 30px;
-  background-color: #90E0EF;
-  border-bottom: thin solid #000000;
-  padding: 3px 0px;
-}
-#savings-table th:nth-child(1), #savings-table td:nth-child(1), #savings-table th:nth-child(2), #savings-table td:nth-child(2) {
-  border-right: medium solid #000000;
-}
-#savings-table td:nth-child(3):hover, #savings-table td:nth-child(4):hover {
-  font-size: 20px;
-  font-weight: bold;
-}
-.invfunds {
+.radio-question {
   display: inline;
-  font-size: 17px;
-  line-height: 40px;
+  margin-right: 20px;
 }
-.invfunds:hover {
-  font-weight: bold;
+.radio-buttons-container {
+  display: inline;
 }
-#propsurvey select, #propsurvey input[type="month"] {
-  -webkit-appearance: none;
-  appearance: none;
-  border: 0.15em solid #000000;
-  border-radius: 5px;
-  background-color: #90E0EF;
-  height: 35px;
-  width: 150px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 700;
-  margin-left: 10px;
-  padding-left: 10px;
+.income-btn {
+  margin: 50px 0 20px;
 }
-#sidecontent {
-  float: right;
-  width: 35%;
-  border: thin solid #000000;
-  background-color: #CAF0F8;
-  border-radius: 5px;
-  margin: 10px;
-  padding: 10px 30px 30px 30px;
-}
-#sidecontent input[type="number"] {
-  -webkit-appearance: none;
-  appearance: none;
-  border: 0.20em solid #000000;
-  border-radius: 5px;
-  background-color: #90E0EF;
-  height: 25px;
-  width: 100px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 700;
-  margin-left: 10px;
-  padding-left: 10px;
-}
-#sidecontent select {
-  -webkit-appearance: none;
-  appearance: none;
-  border: 0.15em solid #000000;
-  border-radius: 5px;
-  background-color: #90E0EF;
-  height: 25px;
-  width: 50px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  margin-left: 10px;
-  text-align: center;
-}
-#sidecontent .btn {
-  height: 40px;
-  margin: 20px 0px;
-}
-#sidecontent #result {
-  -webkit-appearance: none;
-  appearance: none;
-  border: 0.15em solid #000000;
-  border-radius: 5px;
-  background-color: #90E0EF;
-  height: 25px;
-  width: 200px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 700;
-  padding: 4px 50px;
-  margin-left: 10px;
-}
-footer {
-  background-color: #03045E;
-  color: #ffffff;
-  height: 60px;
-  margin: 0px;
-  padding: 20px 0px 0px 0px;
-  border-top: medium solid #000000;
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
-}
-.footer-content {
-  margin-top: 30px;
-  padding: 0px 20px;
+/*Expenses Section*/
+.expenses-text {
   text-align: right;
+  margin: auto;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+.expenses-text img {
+	width: 20%;
+	float: left;
+}
+.expenses-text input[type="number"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0.1em solid #141414;
+  border-radius: 5px;
+  background-color: #D3F2F8;
+  color: #141414;
+  height: 30px;
+  width: 120px;
+  margin-left: 10px;
+  padding-left: 10px;
+}
+.expenses-btn {
+  margin: 50px 0 20px;
+}
+/*Planner Section*/
+/*Savings Sub Section*/
+.planner-text {
+  color: #ffffff;
+  margin: auto;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+.planner-text input[type="number"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0.1em solid #ffffff;
+  border-radius: 5px;
+  background-color: #141414;
+  color: #ffffff;
+  height: 30px;
+  width: 120px;
+  margin-left: 10px;
+  padding-left: 10px;
+}
+.savings-btn {
+  margin: 30px 0 20px;
+}
+.planner-table {
+  margin: 50px auto;
+  border-collapse: collapse;
+  
+}
+.planner-table th {
+  color: #ffffff;
+  background-color: #141414;
+  border-bottom: thin solid #ffffff;
+  font-weight: 400;
+  font-size: 1.2rem;	
+}
+.planner-table td {
+  background-color: #141414;
+  text-align: center;
+  width: 15rem;
+  padding: 15px 10px 0;
+}
+.planner-table input[type="text"], .planner-table input[type="number"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-bottom: solid 3px #ffffff;
+  background-color: #141414;
+  color: #ffffff;
+  height: 45px;
+	text-align: center;
+}
+/*Investments Sub Section*/
+.investments-text {
+  margin: auto;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+.investments-btn {
+  margin: 50px 0 20px;
+}
+.investments-funds{
+  margin: 50px auto;	
 }
 
-@media screen and (max-width:1270px) and (min-width:895px) {
-  #sidecontent input[type="number"] {
-    margin: 10px;
-  }
+/*Footer*/
+.footer-icon {
+  margin: 20px 10px;
 }
-main {
-  display: flex;
+
+/*Media Quieries*/
+
+/*For Javascript Functionality*/
+
+.fixed {
+	position: fixed;
+	background-color: #141414;
 }
-#sidecontent {
-  height: 320px;
+
+.no-initial-display {
+	display: none;
 }
-@media screen and (max-width:895px) and (min-width:635px) {
-  li {
-    display: inline-grid;
-    padding: 10px 10px;
-  }
-  main {
-    display: block;
-    padding: 5px 0px;
-  }
-  #maincontent {
-    float: none;
-    width: auto;
-    margin: 0px 10px;
-  }
-  #sidecontent {
-    float: none;
-    width: auto;
-    margin: 10px 10px;
-  }
-  input[type="number"] {
-    margin: 10px;
-  }
-}
-@media screen and (max-width:634px) and (min-width:300px) {
-  nav {
-    height: auto;
-    padding: 0px;
-    width: 100%;
-    margin: 0px;
-  }
-  ul {
-    height: auto;
-    text-align: center;
-    margin: 0;
-    padding: 20px 0px;
-  }
-  li {
-    display: inline-grid;
-    padding: 10px 10px;
-  }
-  main {
-    display: block;
-    padding: 5px 0px;
-  }
-  #maincontent {
-    float: none;
-    width: auto;
-    margin: 0px 10px;
-  }
-  #sidecontent {
-    float: none;
-    width: auto;
-    margin: 10px 10px;
-	padding: 10px 30px 70px 30px;
-  }
-  input[type="number"] {
-    margin: 10px;
-  }
-  input[type="month"] {
-    margin: 10px;
-  }
-}
-@media screen and (max-width:448px) {
-  #savings-table {
-    font-size: 13px;
-  }
-  .btn {
-    width: 90px;
-    height: 35px;
-    font-size: 14px;
-  }
-  input[type="number"] {
-    border: 0.15em solid #000000;
-    height: 20px;
-    width: 80px;
-    font-weight: 700;
-    font-size: 12px;
-    margin: 20px;
-  }
-}
+
