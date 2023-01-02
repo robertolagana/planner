@@ -168,7 +168,7 @@ function clickInvestmentsButton() {
 
   document.querySelector(".investments-funds").classList.remove("no-initial-display");
 
-  document.querySelectorAll(".investments-funds p")[1].innerHTML = "Monthly Investment Funds: " + fundsLeftForInvestment + " €";
+  document.querySelectorAll(".investments-funds p")[1].innerHTML = "Yearly Investment Funds: " + fundsLeftForInvestment + " €";
   document.querySelectorAll(".investments-funds p")[0].innerHTML = "Monthly Investment Funds: " + Math.round(fundsLeftForInvestment / 12) + " €";
 
 }
